@@ -1,0 +1,22 @@
+function Y = charCompress(X)
+%반복되는 숫자를 정렬하는 알고리즘
+%1행 n열의 행렬을 압축한다.
+x = "/";
+
+n = length(X);
+    for i=1:1:n-1
+        if X(i) == X(i+1)
+            %반복되는 값의 처리
+            temp_loop = temp_loop +1;
+        else
+            %새로 오는 값의 처리
+            temp = strcat(X(i),temp_loop);
+            %x = strcat(x +"/\n/", temp+ "/");
+            x = x + X(i) + temp_loop +"/";
+            %{
+                문자열들의 casting이 필요한 것 같다.
+            %}
+        end
+    end
+Y = x;
+end
